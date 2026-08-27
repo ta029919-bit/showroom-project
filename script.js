@@ -1,40 +1,57 @@
-// 1. 20 Cars Dataset with Full Technical Specifications
+// 1. 20 Cars Dataset with Full Technical Specifications (Prices in PKR)
 const carsData = [
-  { id: 1, name: "Tesla Model S", brand: "Tesla", type: "Electric", price: 89990, year: 2024, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Dual Motor", warranty: "8 Years / 150k Miles", mileage: "396 mi range", desc: "Flagship luxury electric sedan with hyper acceleration and autopilot features.", image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=600&q=80" },
-  { id: 2, name: "BMW M4 Competition", brand: "BMW", type: "Sports", price: 78100, year: 2024, fuel: "Petrol", transmission: "Automatic", capacity: "4 Seats / 3.0L Twin-Turbo", warranty: "4 Years / 50k Miles", mileage: "16 MPG City", desc: "High-performance sports coupe delivering pure power and track precision.", image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" },
-  { id: 3, name: "Audi A6 Sedan", brand: "Audi", type: "Sedan", price: 56900, year: 2023, fuel: "Hybrid", transmission: "Automatic", capacity: "5 Seats / 2.0L Turbo", warranty: "4 Years / 50k Miles", mileage: "26 MPG Combined", desc: "Executive luxury sedan with Quattro all-wheel drive and sleek digital cockpit.", image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=600&q=80" },
-  { id: 4, name: "Ford Mustang GT", brand: "Ford", type: "Sports", price: 42495, year: 2023, fuel: "Petrol", transmission: "Manual", capacity: "4 Seats / 5.0L V8", warranty: "3 Years / 36k Miles", mileage: "18 MPG Combined", desc: "Iconic American muscle car equipped with roaring V8 engine dynamics.", image: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=600&q=80" },
-  { id: 5, name: "Porsche 911 Carrera", brand: "Porsche", type: "Sports", price: 114400, year: 2024, fuel: "Petrol", transmission: "Automatic", capacity: "2+2 Seats / 3.0L Flat-6", warranty: "4 Years / 50k Miles", mileage: "20 MPG Combined", desc: "Timeless sports car engineering with unrivaled handling dynamics.", image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=600&q=80" },
-  { id: 6, name: "Mercedes GLE SUV", brand: "Mercedes", type: "SUV", price: 62650, year: 2023, fuel: "Diesel", transmission: "Automatic", capacity: "7 Seats / 3.0L Turbo", warranty: "4 Years / 50k Miles", mileage: "24 MPG Hwy", desc: "Spacious luxury family SUV packed with modern luxury and offroad performance.", image: "https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?auto=format&fit=crop&w=600&q=80" },
-  { id: 7, name: "Volkswagen Golf GTI", brand: "Volkswagen", type: "Hatchback", price: 31965, year: 2023, fuel: "Petrol", transmission: "Automatic", capacity: "5 Seats / 2.0L Turbo", warranty: "4 Years / 50k Miles", mileage: "28 MPG Combined", desc: "Hot hatchback offering versatile daily driving with sporty agility.", image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80" },
-  { id: 8, name: "Hyundai Ioniq 5", brand: "Hyundai", type: "Electric", price: 41450, year: 2024, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Single Motor", warranty: "10 Years / 100k Miles", mileage: "303 mi range", desc: "Futuristic retro-styled crossover EV with ultra-fast charging capability.", image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80" },
-  { id: 9, name: "Honda Civic Type R", brand: "Honda", type: "Hatchback", price: 43790, year: 2023, fuel: "Petrol", transmission: "Manual", capacity: "4 Seats / 2.0L Turbo", warranty: "3 Years / 36k Miles", mileage: "24 MPG Combined", desc: "Track-focused sport hatchback with aggressive aero styling.", image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80" },
-  { id: 10, name: "Toyota Land Cruiser", brand: "Toyota", type: "SUV", price: 87000, year: 2023, fuel: "Diesel", transmission: "Automatic", capacity: "7 Seats / 3.5L V6 Twin-Turbo", warranty: "3 Years / 36k Miles", mileage: "17 MPG Combined", desc: "Unmatched offroad reliability and rugged luxury capabilities.", image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" },
-  { id: 11, name: "Chevrolet Corvette", brand: "Chevrolet", type: "Sports", price: 68300, year: 2024, fuel: "Petrol", transmission: "Automatic", capacity: "2 Seats / 6.2L V8", warranty: "3 Years / 36k Miles", mileage: "19 MPG Combined", desc: "Mid-engine supercar performance at an accessible price point.", image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" },
-  { id: 12, name: "Nissan Leaf EV", brand: "Nissan", type: "Electric", price: 28140, year: 2023, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Electric Motor", warranty: "8 Years / 100k Miles", mileage: "149 mi range", desc: "Affordable and practical electric vehicle for everyday urban commuting.", image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" },
-  { id: 13, name: "Mazda 3 Hatchback", brand: "Mazda", type: "Hatchback", price: 25600, year: 2023, fuel: "Petrol", transmission: "Automatic", capacity: "5 Seats / 2.5L 4-Cyl", warranty: "3 Years / 36k Miles", mileage: "31 MPG Combined", desc: "Premium interior feel with responsive handling in a compact body.", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80" },
-  { id: 14, name: "BMW i7 Electric", brand: "BMW", type: "Electric", price: 105700, year: 2024, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Dual Motor", warranty: "8 Years / 100k Miles", mileage: "318 mi range", desc: "Ultra-luxury electric sedan with theater screen and lounge seating.", image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&q=80" },
-  { id: 15, name: "Volvo XC90 SUV", brand: "Volvo", type: "SUV", price: 56000, year: 2023, fuel: "Hybrid", transmission: "Automatic", capacity: "7 Seats / 2.0L Turbo Hybrid", warranty: "4 Years / 50k Miles", mileage: "27 MPG Combined", desc: "Industry-leading safety features blended with Scandinavian design.", image: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=600&q=80" },
-  { id: 16, name: "Mercedes C-Class", brand: "Mercedes", type: "Sedan", price: 44850, year: 2023, fuel: "Petrol", transmission: "Automatic", capacity: "5 Seats / 2.0L Turbo", warranty: "4 Years / 50k Miles", mileage: "29 MPG Combined", desc: "Sophisticated luxury sedan featuring S-Class tech inside.", image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80" },
-  { id: 17, name: "Ford F-150 EV", brand: "Ford", type: "Electric", price: 49995, year: 2023, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Dual Motor 4WD", warranty: "8 Years / 100k Miles", mileage: "240 mi range", desc: "All-electric workhorse pickup truck with onboard power generator.", image: "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=600&q=80" },
-  { id: 18, name: "Audi RS6 Avant", brand: "Audi", type: "Sports", price: 121900, year: 2024, fuel: "Petrol", transmission: "Automatic", capacity: "5 Seats / 4.0L V8 Twin-Turbo", warranty: "4 Years / 50k Miles", mileage: "17 MPG Combined", desc: "Ultimate performance wagon combining supercar speed with wagon utility.", image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=600&q=80" },
-  { id: 19, name: "Kia EV6 GT", brand: "Kia", type: "Electric", price: 42600, year: 2023, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Dual Motor", warranty: "10 Years / 100k Miles", mileage: "310 mi range", desc: "High-performance EV crossover with rapid acceleration.", image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80" },
-  { id: 20, name: "Toyota Camry Hybrid", brand: "Toyota", type: "Sedan", price: 26420, year: 2023, fuel: "Hybrid", transmission: "Automatic", capacity: "5 Seats / 2.5L 4-Cyl Hybrid", warranty: "3 Years / 36k Miles", mileage: "52 MPG Combined", desc: "Ultra-reliable sedan offering unbelievable hybrid fuel efficiency.", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=600&q=80" }
+  { id: 1, name: "Tesla Model S", brand: "Tesla", type: "Electric", price: 25000000, year: 2024, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Dual Motor", warranty: "8 Years / 150k Miles", mileage: "396 mi range", desc: "Flagship luxury electric sedan with hyper acceleration and autopilot features.", image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=600&q=80" },
+  { id: 2, name: "BMW M4 Competition", brand: "BMW", type: "Sports", price: 32000000, year: 2024, fuel: "Petrol", transmission: "Automatic", capacity: "4 Seats / 3.0L Twin-Turbo", warranty: "4 Years / 50k Miles", mileage: "16 MPG City", desc: "High-performance sports coupe delivering pure power and track precision.", image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80" },
+  { id: 3, name: "Audi A6 Sedan", brand: "Audi", type: "Sedan", price: 22000000, year: 2023, fuel: "Hybrid", transmission: "Automatic", capacity: "5 Seats / 2.0L Turbo", warranty: "4 Years / 50k Miles", mileage: "26 MPG Combined", desc: "Executive luxury sedan with Quattro all-wheel drive and sleek digital cockpit.", image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=600&q=80" },
+  { id: 4, name: "Ford Mustang GT", brand: "Ford", type: "Sports", price: 18500000, year: 2023, fuel: "Petrol", transmission: "Manual", capacity: "4 Seats / 5.0L V8", warranty: "3 Years / 36k Miles", mileage: "18 MPG Combined", desc: "Iconic American muscle car equipped with roaring V8 engine dynamics.", image: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=600&q=80" },
+  { id: 5, name: "Porsche 911 Carrera", brand: "Porsche", type: "Sports", price: 45000000, year: 2024, fuel: "Petrol", transmission: "Automatic", capacity: "2+2 Seats / 3.0L Flat-6", warranty: "4 Years / 50k Miles", mileage: "20 MPG Combined", desc: "Timeless sports car engineering with unrivaled handling dynamics.", image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=600&q=80" },
+  { id: 6, name: "Mercedes GLE SUV", brand: "Mercedes", type: "SUV", price: 35000000, year: 2023, fuel: "Diesel", transmission: "Automatic", capacity: "7 Seats / 3.0L Turbo", warranty: "4 Years / 50k Miles", mileage: "24 MPG Hwy", desc: "Spacious luxury family SUV packed with modern luxury and offroad performance.", image: "https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?auto=format&fit=crop&w=600&q=80" },
+  { id: 7, name: "Volkswagen Golf GTI", brand: "Volkswagen", type: "Hatchback", price: 12000000, year: 2023, fuel: "Petrol", transmission: "Automatic", capacity: "5 Seats / 2.0L Turbo", warranty: "4 Years / 50k Miles", mileage: "28 MPG Combined", desc: "Hot hatchback offering versatile daily driving with sporty agility.", image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80" },
+  { id: 8, name: "Hyundai Ioniq 5", brand: "Hyundai", type: "Electric", price: 16500000, year: 2024, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Single Motor", warranty: "10 Years / 100k Miles", mileage: "303 mi range", desc: "Futuristic retro-styled crossover EV with ultra-fast charging capability.", image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80" },
+  { id: 9, name: "Honda Civic Type R", brand: "Honda", type: "Hatchback", price: 15000000, year: 2023, fuel: "Petrol", transmission: "Manual", capacity: "4 Seats / 2.0L Turbo", warranty: "3 Years / 36k Miles", mileage: "24 MPG Combined", desc: "Track-focused sport hatchback with aggressive aero styling.", image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80" },
+  { id: 10, name: "Toyota Land Cruiser", brand: "Toyota", type: "SUV", price: 55000000, year: 2023, fuel: "Diesel", transmission: "Automatic", capacity: "7 Seats / 3.5L V6 Twin-Turbo", warranty: "3 Years / 36k Miles", mileage: "17 MPG Combined", desc: "Unmatched offroad reliability and rugged luxury capabilities.", image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" },
+  { id: 11, name: "Chevrolet Corvette", brand: "Chevrolet", type: "Sports", price: 28000000, year: 2024, fuel: "Petrol", transmission: "Automatic", capacity: "2 Seats / 6.2L V8", warranty: "3 Years / 36k Miles", mileage: "19 MPG Combined", desc: "Mid-engine supercar performance at an accessible price point.", image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80" },
+  { id: 12, name: "Nissan Leaf EV", brand: "Nissan", type: "Electric", price: 9500000, year: 2023, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Electric Motor", warranty: "8 Years / 100k Miles", mileage: "149 mi range", desc: "Affordable and practical electric vehicle for everyday urban commuting.", image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=600&q=80" },
+  { id: 13, name: "Mazda 3 Hatchback", brand: "Mazda", type: "Hatchback", price: 8500000, year: 2023, fuel: "Petrol", transmission: "Automatic", capacity: "5 Seats / 2.5L 4-Cyl", warranty: "3 Years / 36k Miles", mileage: "31 MPG Combined", desc: "Premium interior feel with responsive handling in a compact body.", image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=600&q=80" },
+  { id: 14, name: "BMW i7 Electric", brand: "BMW", type: "Electric", price: 48000000, year: 2024, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Dual Motor", warranty: "8 Years / 100k Miles", mileage: "318 mi range", desc: "Ultra-luxury electric sedan with theater screen and lounge seating.", image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=600&q=80" },
+  { id: 15, name: "Volvo XC90 SUV", brand: "Volvo", type: "SUV", price: 24000000, year: 2023, fuel: "Hybrid", transmission: "Automatic", capacity: "7 Seats / 2.0L Turbo Hybrid", warranty: "4 Years / 50k Miles", mileage: "27 MPG Combined", desc: "Industry-leading safety features blended with Scandinavian design.", image: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?auto=format&fit=crop&w=600&q=80" },
+  { id: 16, name: "Mercedes C-Class", brand: "Mercedes", type: "Sedan", price: 21000000, year: 2023, fuel: "Petrol", transmission: "Automatic", capacity: "5 Seats / 2.0L Turbo", warranty: "4 Years / 50k Miles", mileage: "29 MPG Combined", desc: "Sophisticated luxury sedan featuring S-Class tech inside.", image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=600&q=80" },
+  { id: 17, name: "Ford F-150 EV", brand: "Ford", type: "Electric", price: 23000000, year: 2023, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Dual Motor 4WD", warranty: "8 Years / 100k Miles", mileage: "240 mi range", desc: "All-electric workhorse pickup truck with onboard power generator.", image: "https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=600&q=80" },
+  { id: 18, name: "Audi RS6 Avant", brand: "Audi", type: "Sports", price: 42000000, year: 2024, fuel: "Petrol", transmission: "Automatic", capacity: "5 Seats / 4.0L V8 Twin-Turbo", warranty: "4 Years / 50k Miles", mileage: "17 MPG Combined", desc: "Ultimate performance wagon combining supercar speed with wagon utility.", image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=600&q=80" },
+  { id: 19, name: "Kia EV6 GT", brand: "Kia", type: "Electric", price: 17000000, year: 2023, fuel: "Electric", transmission: "Automatic", capacity: "5 Seats / Dual Motor", warranty: "10 Years / 100k Miles", mileage: "310 mi range", desc: "High-performance EV crossover with rapid acceleration.", image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=600&q=80" },
+  { id: 20, name: "Toyota Camry Hybrid", brand: "Toyota", type: "Sedan", price: 13500000, year: 2023, fuel: "Hybrid", transmission: "Automatic", capacity: "5 Seats / 2.5L 4-Cyl Hybrid", warranty: "3 Years / 36k Miles", mileage: "52 MPG Combined", desc: "Ultra-reliable sedan offering unbelievable hybrid fuel efficiency.", image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=600&q=80" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Landing Screen Login & Logout Logic
+  // Splash Screen Intro Logic
+  const introSplashScreen = document.getElementById("intro-splash-screen");
+  const enterLoginBtn = document.getElementById("enter-login-btn");
   const landingScreen = document.getElementById("landing-login-screen");
   const mainApp = document.getElementById("main-app");
   const landingForm = document.getElementById("landing-login-form");
   const logoutBtn = document.getElementById("logout-btn");
 
-  // Check initial state
-  if (localStorage.getItem("isLoggedIn") === "true") {
-    landingScreen.style.display = "none";
-    mainApp.classList.remove("main-app-hidden");
+  // 1. Force state reset on page reload so Login ALWAYS shows second
+  localStorage.removeItem("isLoggedIn");
+  mainApp.classList.add("main-app-hidden");
+  landingScreen.style.display = "none";
+
+  // 2. Slide image screen and ALWAYS open Login Screen
+  function showLoginScreen() {
+    introSplashScreen.classList.add("splash-slide-out");
+    setTimeout(() => {
+      introSplashScreen.style.display = "none";
+      landingScreen.style.display = "flex"; // Hamesha Login Screen open hogi
+    }, 600);
   }
+
+  enterLoginBtn.addEventListener("click", showLoginScreen);
+  introSplashScreen.addEventListener("click", (e) => {
+    if (e.target !== enterLoginBtn) {
+      showLoginScreen();
+    }
+  });
 
   landingForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -77,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
   carsData.forEach(car => {
     const opt = document.createElement("option");
     opt.value = car.name;
-    opt.textContent = `${car.name} ($${car.price.toLocaleString()})`;
+    opt.textContent = `${car.name} (PKR ${car.price.toLocaleString()})`;
     tdSelect.appendChild(opt);
   });
 
@@ -102,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="car-card-body">
           <div>
             <h3>${car.name}</h3>
-            <p class="price">$${car.price.toLocaleString()}</p>
+            <p class="price">PKR ${car.price.toLocaleString()}</p>
             <div class="car-specs">
               <span>${car.type}</span> • <span>${car.fuel}</span> • <span>${car.year}</span>
             </div>
@@ -129,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("detail-car-img").src = car.image;
     document.getElementById("detail-car-name").textContent = car.name;
-    document.getElementById("detail-car-price").textContent = `$${car.price.toLocaleString()}`;
+    document.getElementById("detail-car-price").textContent = `PKR ${car.price.toLocaleString()}`;
     document.getElementById("detail-car-desc").textContent = car.desc;
     document.getElementById("detail-car-type").textContent = car.type;
     document.getElementById("detail-car-fuel").textContent = car.fuel;
@@ -219,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (amount && rate && tenure) {
       const emi = (amount * rate * Math.pow(1 + rate, tenure)) / (Math.pow(1 + rate, tenure) - 1);
-      document.getElementById("emi-result").textContent = `Estimated EMI: $${emi.toFixed(2)} / month`;
+      document.getElementById("emi-result").textContent = `Estimated EMI: PKR ${emi.toFixed(2)} / month`;
     } else {
       document.getElementById("emi-result").textContent = "Please fill in all fields correctly.";
     }

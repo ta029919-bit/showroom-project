@@ -8,8 +8,18 @@
 </head>
 <body>
 
+  <!-- Fullscreen Initial Intro/Splash Screen -->
+  <div id="intro-splash-screen" class="splash-screen">
+    <div class="splash-content">
+      <img src="image.jpg" alt="Apex Auto Intro" class="splash-img">
+      <div class="splash-overlay">
+        <button id="enter-login-btn" class="btn btn-splash">Continue to Login ➔</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Fullscreen Landing Entry Login Page -->
-  <div id="landing-login-screen" class="landing-login-container">
+  <div id="landing-login-screen" class="landing-login-container" style="display:none;">
     <div class="landing-login-card">
       <div class="landing-login-left">
         <div class="brand-badge">🏎️ ApexAuto</div>
@@ -50,6 +60,7 @@
         <li><a href="#favorites">Favorites</a></li>
         <li><a href="#emi">EMI Calculator</a></li>
         <li><a href="#booking">Book Test Drive</a></li>
+        <li><a href="#reviews">Reviews</a></li>
       </ul>
 
       <div class="nav-controls">
@@ -116,8 +127,8 @@
         <h2>📊 EMI Finance Calculator</h2>
         <div class="form-container">
           <div class="form-group">
-            <label>Loan Amount ($)</label>
-            <input type="number" id="emi-amount" placeholder="e.g. 50000">
+            <label>Loan Amount (PKR)</label>
+            <input type="number" id="emi-amount" placeholder="e.g. 15000000">
           </div>
           <div class="form-group">
             <label>Interest Rate (%)</label>
@@ -157,6 +168,60 @@
             </div>
             <button class="btn" type="submit">Submit Request</button>
           </form>
+        </div>
+      </section>
+
+      <!-- Reviews & Feedback Section -->
+      <section class="section" id="reviews">
+        <h2>💬 Customer Reviews & Feedback</h2>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-header">
+              <strong>Ali Raza</strong>
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p>"Bought my Tesla Model S from ApexAuto. Smooth process and excellent response time from their sales team!"</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <strong>Usman Khan</strong>
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p>"The test drive booking experience was super easy. Vehicle arrived in pristine condition right on time."</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <strong>Ayesha Malik</strong>
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p>"Loved the EMI calculator tool! It helped me plan my finances easily before purchasing my Civic Type R."</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <strong>Hamza Sheikh</strong>
+              <span class="stars">⭐⭐⭐⭐</span>
+            </div>
+            <p>"Top notch luxury car inventory. ApexAuto is definitely the premier showroom in town."</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <strong>Zainab Bibi</strong>
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p>"Transparent pricing in Pakistani Rupees and super helpful customer care. Highly recommended!"</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <strong>Bilal Ahmed</strong>
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p>"Amazing user interface and great collection of hybrid and electric vehicles!"</p>
+          </div>
         </div>
       </section>
 

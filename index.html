@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Auto | Premium Car Showroom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fullscreen Landing Entry Login Page -->
+  <div id="landing-login-screen" class="landing-login-container">
+    <div class="landing-login-card">
+      <div class="landing-login-left">
+        <div class="brand-badge">🏎️ ApexAuto</div>
+        <h2>Welcome Back</h2>
+        <p>Please log in to access full inventory, test drive booking & details.</p>
+        
+        <form id="landing-login-form">
+          <div class="form-group">
+            <label>Username / Email</label>
+            <input type="text" id="landing-email" placeholder="Enter username or email" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="landing-pass" placeholder="••••••••" required>
+          </div>
+          <button class="btn btn-login-submit" type="submit">Login to Showroom</button>
+        </form>
+      </div>
+      <div class="landing-login-right">
+        <div class="login-img-overlay">
+          <h3>Experience Ultimate Luxury</h3>
+          <p>Explore performance, specs & custom financing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Showroom Web App Wrapper (Hidden until login) -->
+  <div id="main-app" class="main-app-hidden">
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+      <div class="logo">🏎️ ApexAuto</div>
+      
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#cars">Cars</a></li>
+        <li><a href="#favorites">Favorites</a></li>
+        <li><a href="#emi">EMI Calculator</a></li>
+        <li><a href="#booking">Book Test Drive</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button class="btn btn-logout-nav" id="logout-btn">🔒 Logout</button>
+        <button class="theme-toggle" id="theme-toggle" title="Toggle Mode">🌙</button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">☰</button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Find Your Dream Ride</h1>
+        <p>Browse through over 20+ luxury and everyday performance vehicles</p>
+        <a href="#cars" class="btn btn-hero">Explore Inventory</a>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <!-- Filters & Search Section -->
+      <section class="section" id="cars">
+        <h2>Vehicle Inventory</h2>
+        <div class="filter-card">
+          <input type="text" id="search-input" class="filter-control" placeholder="🔍 Search Brand or Model...">
+          
+          <select id="category-filter" class="filter-control">
+            <option value="All">All Categories</option>
+            <option value="Sedan">Sedan</option>
+            <option value="SUV">SUV</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Sports">Sports</option>
+            <option value="Electric">Electric</option>
+          </select>
+
+          <select id="fuel-filter" class="filter-control">
+            <option value="All">All Fuel Types</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
+            <option value="Hybrid">Hybrid</option>
+          </select>
+
+          <select id="sort-select" class="filter-control">
+            <option value="default">Sort By</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="year">Newest First</option>
+          </select>
+        </div>
+
+        <!-- Car Grid -->
+        <div class="car-grid" id="cars-grid"></div>
+      </section>
+
+      <!-- Favorites Section -->
+      <section class="section" id="favorites">
+        <h2>❤️ Saved Favorites</h2>
+        <div class="car-grid" id="favorites-grid"></div>
+      </section>
+
+      <!-- EMI Calculator -->
+      <section class="section" id="emi">
+        <h2>📊 EMI Finance Calculator</h2>
+        <div class="form-container">
+          <div class="form-group">
+            <label>Loan Amount ($)</label>
+            <input type="number" id="emi-amount" placeholder="e.g. 50000">
+          </div>
+          <div class="form-group">
+            <label>Interest Rate (%)</label>
+            <input type="number" id="emi-rate" placeholder="e.g. 7.5">
+          </div>
+          <div class="form-group">
+            <label>Tenure (Years)</label>
+            <input type="number" id="emi-tenure" placeholder="e.g. 5">
+          </div>
+          <button class="btn" id="calc-emi-btn">Calculate Monthly Payment</button>
+          <div id="emi-result" class="result-box"></div>
+        </div>
+      </section>
+
+      <!-- Test Drive Booking Form -->
+      <section class="section" id="booking">
+        <h2>📅 Book a Test Drive</h2>
+        <div class="form-container">
+          <form id="test-drive-form">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="td-name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="td-phone" required placeholder="e.g. +923001234567">
+            </div>
+            <div class="form-group">
+              <label>Select Vehicle *</label>
+              <select id="td-car" required>
+                <option value="">Select a Car</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Preferred Date *</label>
+              <input type="date" id="td-date" required>
+            </div>
+            <button class="btn" type="submit">Submit Request</button>
+          </form>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Detailed Car Spec Modal -->
+    <div class="modal" id="details-modal">
+      <div class="modal-content modal-large">
+        <span class="close-modal" id="close-details-modal">&times;</span>
+        <div class="modal-body-grid">
+          <div class="modal-image-box">
+            <img id="detail-car-img" src="" alt="Car Image">
+          </div>
+          <div class="modal-info-box">
+            <h2 id="detail-car-name"></h2>
+            <p class="price" id="detail-car-price"></p>
+            <p id="detail-car-desc" class="car-description"></p>
+            
+            <div class="spec-list">
+              <div class="spec-item"><strong>Category:</strong> <span id="detail-car-type"></span></div>
+              <div class="spec-item"><strong>Fuel Type:</strong> <span id="detail-car-fuel"></span></div>
+              <div class="spec-item"><strong>Transmission:</strong> <span id="detail-car-trans"></span></div>
+              <div class="spec-item"><strong>Capacity:</strong> <span id="detail-car-cap"></span></div>
+              <div class="spec-item"><strong>Warranty:</strong> <span id="detail-car-warranty"></span></div>
+              <div class="spec-item"><strong>Mileage/Range:</strong> <span id="detail-car-mileage"></span></div>
+            </div>
+            
+            <button class="btn btn-modal-act" id="detail-inquire-btn">Inquire Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inquiry Popup Modal -->
+    <div class="modal" id="inquiry-modal">
+      <div class="modal-content">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <h3>Send Inquiry</h3>
+        <p id="inquiry-car-title" style="color:var(--accent); font-weight:bold; margin-bottom:1rem;"></p>
+        <form id="inquiry-form">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Ask about price, test drives, or features..." rows="3" required></textarea>
+          </div>
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Scroll To Top Button -->
+    <button id="scroll-top-btn" class="scroll-top-btn">⬆️</button>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div>
+          <h3>🏎️ ApexAuto</h3>
+          <p>Premium cars & luxury driving experiences.</p>
+        </div>
+        <div>
+          <h4>Showroom Location</h4>
+          <p>123 Auto Avenue, Motor City</p>
+          <p>Hours: Mon - Sat (9:00 AM - 8:00 PM)</p>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <p>Email: support@apexauto.com</p>
+          <p>Phone: +1 (800) 555-0199</p>
+        </div>
+        <div class="map-container">
+          <h4>Showroom Map</h4>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.83543450937!2d144.9537353153166!3d-37.81627977975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2s!4v1614051050000!5m2!1sen!2s" 
+            width="100%" 
+            height="120" 
+            style="border:0; border-radius: 6px;" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2026 ApexAuto Showroom. All Rights Reserved.</div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
